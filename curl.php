@@ -189,18 +189,4 @@ function claim($token)
         return false;
         }
     }
-     function pengen($token)
-    {
-    $data = '{"promo_code":"JAJANPAKEGOPAY"}';    
-    $claim = request("/go-promotions/v1/promotions/enrollments", $token, $data);
-    if ($claim['success'] == 1)
-        {
-        return $claim['data']['message'];
-        }
-      else
-        {
-      save("error_log.txt", json_encode($claim));
-        return false;
-        }
-    }
 ?>
